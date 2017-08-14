@@ -4,8 +4,14 @@ public class Attendee {
 
 	private Long id;
 	private String name;
+	private String email;
 
 	public Attendee () {}
+
+	public Attendee (String name, String email) {
+		this.name = name;
+		this.email = email;
+	}
 
 	public Long getId(){
 		return this.id;
@@ -23,8 +29,17 @@ public class Attendee {
 		this.name = name;
 	}
 
+	public String getEmail(){
+		return this.email;
+	}
+
+	public void setEmail(String email){
+		this.email = email;
+	}
+
+
 	@Override
 	public String toString() {
-  	return "Attendee{" + "id=" + id + ", name=" + name + '}';
+  	return "Attendee{" + "id=" + this.id + ", name=" + this.name + ", email=" + this.email + '}';
 	}
 }

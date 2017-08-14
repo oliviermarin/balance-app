@@ -15,12 +15,15 @@ public class AttendeeService implements IAttendeeService {
 	private JdbcTemplate jtm;
 
 	@Override
-  public List<Attendee> findAll() {
-
-  String sql = "SELECT * FROM attendees";
-
-  List<Attendee> attendees = jtm.query(sql, new BeanPropertyRowMapper(Attendee.class));
-		return attendees;
+  	public List<Attendee> findAll() {
+  		String sql = "SELECT * FROM attendees";
+		return (List<Attendee>)jtm.query(sql, new BeanPropertyRowMapper(Attendee.class));
+	}
+	
+	@Override
+	public Attendee findById(Long id) {
+		String sql = "SELECT * FROM attendees WHERE id = ?";
+		return (Attendee)jtm.queryForObject(sql, new BeanPropertyRowMapper(Attendee.class), id);
 	}
 
 }

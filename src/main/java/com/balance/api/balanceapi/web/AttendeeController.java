@@ -1,9 +1,12 @@
 package com.balance.api.balanceapi.web;
 
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import com.balance.api.balanceapi.service.IAttendeeService;
 import com.balance.api.balanceapi.domain.Attendee;
@@ -14,16 +17,20 @@ import java.util.List;
 public class AttendeeController {
 	
 	@Autowired
-  private IAttendeeService attendeeService;
+  	private IAttendeeService attendeeService;
 
 	@RequestMapping("/")
 	public String helloWorld() {        
-  	return "Hello, world !";
+  	return "Balance API";
 	}
 
-	@RequestMapping(name = "/attendees", method = RequestMethod.GET)
-	public List<Attendee> getAllAttendees() {
-    List<Attendee> attendees = attendeeService.findAll();
-    return attendees;
+	@GetMapping("/attendee/{id}")
+	public @ResponseBody Attendee findAttendeeById(@PathVariable Long id) {
+    	return this.attendeeService.findById(id);
+	}
+
+	@GetMapping("/attendees")
+	public @ResponseBody List<Attendee> getAllAttendees() {
+		return this.attendeeService.findAll();
 	}
 }
