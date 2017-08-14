@@ -1,8 +1,15 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MdButtonModule, MdCheckboxModule } from '@angular/material';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { FormsModule } from '@angular/forms';
+
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 
@@ -12,9 +19,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpModule,
+    RouterModule.forRoot([]),
+    FlexLayoutModule,
+    MaterialModule,
     BrowserAnimationsModule,
-    MdButtonModule, 
-    MdCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,32 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<md-toolbar color="primary">
+  
+  <!-- Le home est toujours visible -->
+  <button md-button routerLink="/">
+    <md-icon>home</md-icon> {{title}}
+  </button>
 
-{{title}}
+  <span class="fill-remaining-space"></span>
+
+  <!-- fxShow.gt-sm signifie que la div sera visible 
+  lorsque la largeur de l'écran est de plus de 960 px -->
+  <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <button md-button>My Account</button>
+    <button md-button>Expenses</button>
+    <button md-button>Balance</button>
+  </div>
+
+  <!-- fxShow.gt-sm signifie que la div sera invisible 
+  lorsque la largeur de l'écran est de plus de 960 px -->
+  <button md-button [md-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+    <md-icon>menu</md-icon>
+  </button>
+
+</md-toolbar>
+
+<!-- Creation d'une reference menu vers une instance de mdMenu -->
+<md-menu x-position="before" #menu="mdMenu" >
+  <button md-menu-item>My Account</button>
+  <button md-menu-item>Expenses</button>
+  <button md-menu-item>Balance</button>
+</md-menu>
 
