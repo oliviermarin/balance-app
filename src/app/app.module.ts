@@ -12,10 +12,14 @@ import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
+import { NavComponent } from './core/nav/nav.component';
+import { FtrComponent } from './core/ftr/ftr.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavComponent,
+    FtrComponent
   ],
   imports: [
     BrowserModule,
