@@ -1,5 +1,5 @@
-<div>
-  <app-nav></app-nav>
-  <router-outlet></router-outlet>
+<app-nav (toggleNavBarTriggered)="toggleNavBarTriggered()"></app-nav>
+<div class="balance-app-container">
+    <app-side-nav #appSideNav></app-side-nav>
 </div>
 <app-ftr></app-ftr>
