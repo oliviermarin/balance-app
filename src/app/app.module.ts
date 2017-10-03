@@ -21,7 +21,8 @@ import { SideNavComponent } from './core/side-nav/side-nav.component';
     AppComponent,
     NavComponent,
     FtrComponent,
-    SideNavComponent
+    SideNavComponent,
+    AttendeeComponent
   ],
   imports: [
     BrowserModule,
