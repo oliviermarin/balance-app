@@ -1,13 +1,13 @@
 <md-sidenav-container class="example-container">
     <md-sidenav mode="side" #sidenav class="example-sidenav">
         <md-list dense>
-            <md-list-item> Account </md-list-item>
-            <md-list-item> Tricount </md-list-item>
+            <a><md-list-item>Attendees</md-list-item></a>
+            <a><md-list-item>Tricounts</md-list-item></a>
         </md-list>           
     </md-sidenav>
       
     <div class="example-sidenav-content">
-        <p>Welcome !</p>
+        <router-outlet></router-outlet>
     </div>
 </md-sidenav-container>
       

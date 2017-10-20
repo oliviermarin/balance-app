@@ -8,7 +8,7 @@ import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 export class NavComponent implements OnInit {
   
   @Output()
-  toggleNavBarTriggered: EventEmitter<void> = new EventEmitter();
+  toggleNavBarTriggered: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 

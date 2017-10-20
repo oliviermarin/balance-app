@@ -21,3 +21,7 @@ body {
     height: 86%;
     background-color: green;
 }
+
+.attendee-card {
+    margin: 5px 5px 0px 5px;
+}

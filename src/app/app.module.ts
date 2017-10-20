@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
-
 import { BrowserModule } from '@angular/platform-browser';
-
 import { FormsModule } from '@angular/forms';
-
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+
+import { AttendeeService } from './service/attendee.service';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './core/nav/nav.component';
 import { FtrComponent } from './core/ftr/ftr.component';
 import { SideNavComponent } from './core/side-nav/side-nav.component';
+import { AttendeeComponent } from './attendee/attendee.component';
+import { AttendeesComponent } from './attendees/attendees.component';
+
+import { ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { SideNavComponent } from './core/side-nav/side-nav.component';
     NavComponent,
     FtrComponent,
     SideNavComponent,
-    AttendeeComponent
+    AttendeeComponent,
+    AttendeesComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,8 +35,11 @@ import { SideNavComponent } from './core/side-nav/side-nav.component';
     FlexLayoutModule,
     MaterialModule,
     BrowserAnimationsModule,
+    RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [
+    AttendeeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
