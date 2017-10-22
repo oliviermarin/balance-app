@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AttendeeService } from './../service/attendee.service';
 import { Attendee } from './../domain/Attendee';
+import { Observable } from 'rxjs/Observable';
+import { DataSource } from '@angular/cdk/collections';
+import 'rxjs/add/observable/of';
 
 @Component({
   selector: 'app-attendees',
@@ -8,20 +11,33 @@ import { Attendee } from './../domain/Attendee';
   styleUrls: ['./attendees.component.scss']
 })
 export class AttendeesComponent implements OnInit {
-
-  attendees: Attendee[];
+  
+  attendeeDataSource: AttendeeDataSource;
 
   constructor(private attendeeService: AttendeeService) { }
 
   ngOnInit() {
     this.attendeeService
       .getAll()
-      .subscribe(attendes => {
-        for(let attendee of attendes){
-          console.log(attendee);
-        };
-        this.attendees = attendes;
-      });
+      .subscribe(attendees => {
+        this.attendeeDataSource = new AttendeeDataSource(attendees);
+      });   
   }
 
+}
+
+export class AttendeeDataSource extends DataSource<any> {
+
+  constructor(private attendees: Attendee[]) {
+    super();
+  }
+
+  connect(): Observable<Attendee[]> {
+    for(let attendee of this.attendees) {
+      console.log(attendee);
+    }
+    return Observable.of(this.attendees);
+  }
+
+  disconnect() {}
 }

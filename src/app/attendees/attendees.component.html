@@ -1,1 +1,27 @@
-<p>attendees : {{attendees | json}}</p>
+<div class="example-container mat-elevation-z8">
+    <cdk-table  #table [dataSource]="attendeeDataSource" class="example-table">
+      <ng-container cdkColumnDef="id" >
+        <cdk-header-cell *cdkHeaderCellDef class="example-header-cell" > ID </cdk-header-cell>
+        <cdk-cell *cdkCellDef="let row" class="example-cell">{{row.id}}</cdk-cell>
+      </ng-container>
+  
+      <ng-container cdkColumnDef="firstname">
+        <cdk-header-cell *cdkHeaderCellDef class="example-header-cell"> Firstname </cdk-header-cell>
+        <cdk-cell *cdkCellDef="let row" class="example-cell"> {{row.firstname}} </cdk-cell>
+      </ng-container>
+  
+      <ng-container cdkColumnDef="lastname">
+        <cdk-header-cell *cdkHeaderCellDef class="example-header-cell"> Lastname </cdk-header-cell>
+        <cdk-cell *cdkCellDef="let row" class="example-cell"> {{row.lastname}} </cdk-cell>
+      </ng-container>
+  
+      <ng-container cdkColumnDef="email">
+        <cdk-header-cell *cdkHeaderCellDef class="example-header-cell">Email</cdk-header-cell>
+        <cdk-cell *cdkCellDef="let row" class="example-cell">{{row.email}}</cdk-cell>
+      </ng-container>
+
+      <cdk-header-row *cdkHeaderRowDef="['id', 'firstname', 'lastname', 'email']" class="example-header-row"></cdk-header-row>
+      <cdk-row *cdkRowDef="let row; columns: ['id', 'firstname', 'lastname', 'email'];" class="example-row"></cdk-row>
+    </cdk-table>
+  </div>
+  
