@@ -33,9 +33,6 @@ export class AttendeeDataSource extends DataSource<any> {
   }
 
   connect(): Observable<Attendee[]> {
-    for(let attendee of this.attendees) {
-      console.log(attendee);
-    }
     return Observable.of(this.attendees);
   }
 
