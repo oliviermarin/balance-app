@@ -1,22 +1,22 @@
 <div class="attendee-table-container mat-elevation-z8">
-    <md-table  #table [dataSource]="attendeeDataSource" class="attendee-table">
+    <md-table  #table [dataSource]="attendeeDataSource" mdSort class="attendee-table">
       <ng-container mdColumnDef="id" >
-        <md-header-cell *mdHeaderCellDef class="attendee-header-cell" > ID </md-header-cell>
+        <md-header-cell *mdHeaderCellDef md-sort-header class="attendee-header-cell" > ID </md-header-cell>
         <md-cell *mdCellDef="let attendee" class="attendee-cell">{{attendee.id}}</md-cell>
       </ng-container>
   
       <ng-container mdColumnDef="firstname">
-        <md-header-cell *mdHeaderCellDef class="attendee-header-cell"> FIRSTNAME </md-header-cell>
+        <md-header-cell *mdHeaderCellDef md-sort-header class="attendee-header-cell"> FIRSTNAME </md-header-cell>
         <md-cell *mdCellDef="let attendee" class="attendee-cell"> {{attendee.firstname}} </md-cell>
       </ng-container>
   
       <ng-container mdColumnDef="lastname">
-        <md-header-cell *mdHeaderCellDef class="attendee-header-cell"> LASTNAME </md-header-cell>
+        <md-header-cell *mdHeaderCellDef md-sort-header class="attendee-header-cell"> LASTNAME </md-header-cell>
         <md-cell *mdCellDef="let attendee" class="attendee-cell"> {{attendee.lastname}} </md-cell>
       </ng-container>
   
       <ng-container mdColumnDef="email">
-        <md-header-cell *mdHeaderCellDef class="attendee-header-cell"> EMAIL </md-header-cell>
+        <md-header-cell *mdHeaderCellDef md-sort-header class="attendee-header-cell"> EMAIL </md-header-cell>
         <md-cell *mdCellDef="let attendee" class="attendee-cell">{{attendee.email}}</md-cell>
       </ng-container>
 
