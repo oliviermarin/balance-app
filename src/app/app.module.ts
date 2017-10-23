@@ -15,7 +15,6 @@ import { FtrComponent } from './core/ftr/ftr.component';
 import { SideNavComponent } from './core/side-nav/side-nav.component';
 import { AttendeeComponent } from './attendee/attendee.component';
 import { AttendeesComponent } from './attendees/attendees.component';
-import { CdkTableModule } from '@angular/cdk/table';
 
 import { ROUTES } from './app.routes';
 
@@ -36,7 +35,6 @@ import { ROUTES } from './app.routes';
     FlexLayoutModule,
     MaterialModule,
     BrowserAnimationsModule,
-    CdkTableModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [

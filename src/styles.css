@@ -13,6 +13,7 @@ body {
     width: 100%;
     min-height: 100%;
     display: flex;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .balance-app-container {
